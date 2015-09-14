@@ -1,0 +1,100 @@
+/* CSS Used for the Q+D CSS Part 1 */
+/* Use with the template.html file */
+
+/* You can place comments before, just don't put CSS before these lines */
+
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+
+/* Target HTML Elements*/
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #DDD;
+}
+
+p {
+	color: #FF7700;
+	font-weight: 500; 
+}
+
+/* Id selector */
+#nav-list li {
+	list-style-type: none;
+}
+
+/**
+ *
+ * For this to work:
+ *    add: <link rel="stylesheet" href="../css/font-awesome-4.4.0/css/font-awesome.min.css"> to html
+ *
+ */
+
+#nav-list li a::before {
+	font-family: 'Fontawesome';
+    -webkit-font-smoothing: antialiased;
+    content: '\f08e';
+}
+
+/* You can target elements with specific attributes */
+/* This is where you would add the color property to change the color of the icon */
+#nav-list li a[href*="#donate"]::before {
+	content: '\f0c1';
+}
+
+/* Id selector with child elements*/
+#nav-list li a {
+	text-decoration: none;
+}
+
+/* Pseudo-class selectors */
+#nav-list li:first-child a {
+	color: #12AAFF;
+}
+
+#nav-list li a:visited {
+	color: green;
+}
+
+/* This shows the cascading portion of CSS, if an element comes last in the stylesheet, it has higher precedence */
+#nav-list li:nth-child(4) a {
+	color: #FF0000;
+}
+
+/* Class selectors */
+.simple-content {
+	margin: 15px;
+	background-color: #FFFFFF;
+	border-size: 2px;
+	border-style: solid;
+	border-color: rgb(0,0,0);
+}
+
+/* Class selectors with pseudo-element selectors*/
+.simple-content p::first-letter {
+	font-size: 2em;
+	color: magenta;
+}
+
+.simple-content p::selection {
+	background-color: green;
+}
+
+/* Overriding previous styles*/
+#urgent {
+	border: 2px solid #11DD1E;
+	border-radius: 12em 1em 7em 4em;
+}
+
+#urgent p {
+	color: red;
+	font-size: 1.5em;
+}
+
+/* Using custom fonts and targeting a specific element with a class*/
+.crazy-font {
+	font-family: 'Lobster', cursive;
+}
+
+span.crazy-font {
+	font-family: 'Orbitron', sans-serif;
+}
